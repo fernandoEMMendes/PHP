@@ -17,12 +17,20 @@ if ($n1 <= 10) {
             if ($n4 <= 10) {
 
                 $media = ($n1 + $n2 + $n3 = $n4) / $n5;
-                echo "O resultado da média é: ($media)";
+                echo " O resultado da média é: ($media)";
 
             }
         }
     }
 }
 
+//Operador Lógico
+
+if($n1 <= 10 and $n2 <= 10 and $n3 <= 10 and $n4 <= 10) {
+    $media = ($n1 + $n2 + $n3 = $n4) / $n5;
+    echo " O resultado da média é: ($media)";
+} else { 
+    echo " Calculo invalido malandro";
+}
 
 ?>
