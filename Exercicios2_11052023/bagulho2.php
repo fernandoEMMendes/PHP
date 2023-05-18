@@ -41,16 +41,19 @@ if (empty($Nome5)) {
 
 echo "<br>";
 
+//junta arrays
 $Nomes = array_merge($Nome1, $Nome2, $Nome3, $Nome4, $Nome5);
 echo "<br>";
 print_r($Nomes);
 
+//tira ao ultimo valor
 array_pop($Nomes);
 echo "<br>";
 print_r($Nomes);
 
+//organiza em ordem alfabetica
 sort($Nomes);
 echo "<br>";
 print_r($Nomes)
 
-?>
+    ?>
