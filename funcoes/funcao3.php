@@ -37,8 +37,8 @@
     function recuperar($nome, $sobrenome)
     {
 
-        echo "<br> <br> $nome";
-        echo " $sobrenome";
+        echo "<br> <br> $nome<br>";
+        echo " $sobrenome<br>";
 
     }
 
@@ -47,21 +47,21 @@
 
         $resultado = $valor1 - $valor2;
 
-        echo "idade: $resultado";
+        echo "idade: $resultado<br>";
     }
 
     function frutafav($fav)
     {
 
-        echo "Sua fruta favorita é: $fav";
+        echo "Sua fruta favorita é: $fav<br>";
     }
 
     function ceu($check)
     {
         if ($check = true) {
-            echo "Você é daltonico";
+            echo "Você é daltonico<br>";
         } else {
-            echo "Você NÃO é daltonico";
+            echo "Você NÃO é daltonico<br>";
         }
     }
 
