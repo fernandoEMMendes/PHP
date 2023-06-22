@@ -3,11 +3,8 @@
 
 <head>
     <style>
-        body {
-            background-color: white
-        }
-
-        a:link ,a:visited {
+        a:link,
+        a:visited {
             color: white;
         }
     </style>
@@ -22,12 +19,34 @@
 <body>
 
     <div class="container text-center mt-5">
-        <img src="recursos/logo.png" alt="SEGA">
-        <p>SEGA Enterprises, Ltd. (株式会社セガ・エンタープライゼズ Kabushiki-gaisha Sega Entāpuraizezu) was the company that
-            resulted from the merger of Nihon Goraku Bussan and Rosen Enterprises. This company was acquired by
-            Gulf+Western in 1969, put under the control of Sega Enterprises, Inc. in 1974, and then sold to CSK in 1984.
-            It also acquired Esco Boueki. While owned by CSK, Sega Enterprises established an American subsidiary still
-            in operation. Sega Enterprises would change its name to Sega Corporation on November 1, 2000[2].</p>
+        <div class="dropdown-center">
+            <a class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="recursos/logo.png" alt="SEGA">
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <p>A Sega Corporation (株式会社セガ Kabushiki Gaisha Sega?) é uma desenvolvedora e publicadora japonesa de
+                        jogos
+                        eletrônicos sediada em Tóquio possuindo ramos internacionais sediados em Irvine nos Estados
+                        Unidos e
+                        em
+                        Londres no Reino Unido. Foi fundada em 1960 pelo norte-americano Martin Bromley, originalmente
+                        como
+                        duas
+                        companhias separadas chamadas Nihon Goraku Bussan e Nihon Kikai Seizō, que tinham a intenção de
+                        assumir
+                        os
+                        negócios da antiga Service Games of Japan, uma empresa especializada em máquinas caça-níqueis
+                        para
+                        bases
+                        militares. As duas companhias acabaram se fundindo não muito depois e compraram a Rosen
+                        Enterprises
+                        em
+                        1965,
+                        passando então a operar com o nome de Sega Enterprises.</p>
+                </li>
+                <ul>
+        </div>
     </div>
     <br />
     <div class="container text-center">
@@ -39,7 +58,7 @@
             <label for="email">E-mail</label><br />
             <input type="email" name="email" id="email"><br />
 
-            <label  for="senha">Senha</label><br />
+            <label for="senha">Senha</label><br />
             <input type="password" name="senha" id="senha"><br /><br />
 
             <input class="btn btn-primary btn-lg" type="submit" value="verificar"><br />
