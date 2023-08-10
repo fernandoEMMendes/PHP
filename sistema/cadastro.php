@@ -24,22 +24,61 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <input class="form-control " type="text" name="" id="" placeholder="Insira seu nome">
+                        <input class="form-control " type="text" name="" id="" placeholder="Nome">
                     </div>
 
                     <div class="col-md-6">
-                        <input class="form-control" type="password" name="" id="" placeholder="Informe sua senha">
+                        <input class="form-control" type="text" name="" id="" placeholder="Sobrenome">
                     </div>
                 </div class="row">
 
+                <br />
+
                 <div class="row">
-                    <div class="col-md-12">
-                        <input class="form-control" type="text" name="" id=""
-                            placeholder="Nos conte alguns objetivos seu">
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="" id="" placeholder="Endereço">
+                    </div>
+
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="" id="" placeholder="N°">
                     </div>
                 </div>
 
+                <br />
+
                 <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="" id="" placeholder="Cidade">
+                    </div>
+
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="" id="" placeholder="Estado">
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control " type="text" name="" id="" placeholder="Sexo">
+                    </div>
+
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="" id="" placeholder="Cidade">
+                    </div>
+                </div class="row">
+
+                <br />
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="" id="" placeholder="CPF">
+                    </div>
+
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="" id="" placeholder="Data de Nascimento">
+                    </div>
+                </div>
             </form>
     </div>
 
