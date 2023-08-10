@@ -20,27 +20,52 @@
     <div class="container text-center">
         <form>
             <h2>Cadastro de usuários</h2>
-            <form action="" method="post">
+            <form action="bd.php" method="POST">
 
                 <div class="row">
                     <div class="col-md-6">
-                        <input class="form-control " type="text" name="" id="" placeholder="Nome">
+                        <input class="form-control " type="text" name="nome" id="" placeholder="Nome" required>
                     </div>
 
                     <div class="col-md-6">
-                        <input class="form-control" type="text" name="" id="" placeholder="Sobrenome">
+                        <input class="form-control" type="text" name="sobrenome" id="" placeholder="Sobrenome" required>
                     </div>
                 </div class="row">
 
                 <br />
 
+                <div class="col-md-12">
+                    <select required name="sexo" required id="" required>
+                        <option value="">Selecione um</option>
+                        <option value="fem">Feminino</option>
+                        <option value="mas">Masculino</option>
+                        <option value="indefinido">Prefiro não responder</option>
+                    </select>
+                </div>
+
+                <br />
+
+
                 <div class="row">
                     <div class="col-md-6">
-                        <input class="form-control" type="text" name="" id="" placeholder="Endereço">
+                        <input class="form-control" type="text" name="endereco" id="" placeholder="Endereço" required>
                     </div>
 
                     <div class="col-md-6">
-                        <input class="form-control" type="text" name="" id="" placeholder="N°">
+                        <input class="form-control" type="text" name="numero" id="" placeholder="N°" required>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="cidade" id="" placeholder="Cidade" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" name="estado" id="" placeholder="Estado" required>
                     </div>
                 </div>
 
@@ -48,36 +73,24 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <input class="form-control" type="text" name="" id="" placeholder="Cidade">
+                        <input class="form-control" type="text" name="rg" id="" placeholder="RG" required>
                     </div>
 
                     <div class="col-md-6">
-                        <input class="form-control" type="text" name="" id="" placeholder="Estado">
+                        <input class="form-control" type="text" name="cpf" id="" placeholder="CPF" required>
+                    </div>
+
+                    <div class="col-md-12">
+                        <input class="form-control" type="text" name="data_nas" id="" placeholder="Data de Nascimento" required>
                     </div>
                 </div>
 
                 <br />
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <input class="form-control " type="text" name="" id="" placeholder="Sexo">
-                    </div>
 
-                    <div class="col-md-6">
-                        <input class="form-control" type="text" name="" id="" placeholder="Cidade">
-                    </div>
-                </div class="row">
 
-                <br />
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <input class="form-control" type="text" name="" id="" placeholder="CPF">
-                    </div>
-
-                    <div class="col-md-6">
-                        <input class="form-control" type="text" name="" id="" placeholder="Data de Nascimento">
-                    </div>
+                <div>
+                    <input class="btn btn-primary btn-lg" type="submit" value="cadastrar">
                 </div>
             </form>
     </div>
@@ -95,3 +108,8 @@
 </body>
 
 </html>
+
+
+<?php
+print_r($_POST);
+?>

@@ -43,7 +43,9 @@
                         Enterprises
                         em
                         1965,
-                        passando então a operar com o nome de Sega Enterprises.</p>
+                        passando então a operar com o nome de Sega Enterprises. <br /> <br />
+                    </p>
+                    <a href="https://pt.wikipedia.org/wiki/Sega" class="bg-dark">Referência</a>
                 </li>
                 <ul>
         </div>
