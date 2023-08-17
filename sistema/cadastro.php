@@ -20,7 +20,7 @@
     <div class="container text-center">
         <form>
             <h2>Cadastro de usuários</h2>
-            <form action="bd.php" method="POST">
+            <form action="bd.php" method="post">
 
                 <div class="row">
                     <div class="col-md-6">
@@ -29,6 +29,30 @@
 
                     <div class="col-md-6">
                         <input class="form-control" type="text" name="sobrenome" id="" placeholder="Sobrenome" required>
+                    </div>
+                </div class="row">
+
+                <br />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control " type="email" name="email" id="" placeholder="Email" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input class="form-control" type="password" name="senha" id="" placeholder="Senha" required>
+                    </div>
+                </div class="row">
+
+        
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-control " type="email" name="emailconfirm" id="" placeholder="Confirmar Email" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input class="form-control" type="password" name="senhaconfirm" id="" placeholder="Confirmar Senha" required>
                     </div>
                 </div class="row">
 
@@ -81,7 +105,8 @@
                     </div>
 
                     <div class="col-md-12">
-                        <input class="form-control" type="text" name="data_nas" id="" placeholder="Data de Nascimento" required>
+                        <input class="form-control" type="text" name="data_nas" id="" placeholder="Data de Nascimento"
+                            required>
                     </div>
                 </div>
 
@@ -108,8 +133,3 @@
 </body>
 
 </html>
-
-
-<?php
-print_r($_POST);
-?>
