@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="col-md-12">
-                    <input class="form-control" type="text" name="data_nas" id="" placeholder="Data de Nascimento"
+                    <input class="form-control" type="date" name="data_nas" id="" placeholder="Data de Nascimento"
                         required>
                 </div>
             </div>

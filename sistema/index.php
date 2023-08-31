@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -56,9 +61,9 @@
     </div>
 
     <div class="container text-center">
-        <form action="" method="post">
+        <form action="login.php" method="post">
             <label for="email">E-mail</label><br />
-            <input type="email" name="email" id="email"><br />
+            <input type="email" name="user" id="usuario"><br />
 
             <label for="senha">Senha</label><br />
             <input type="password" name="senha" id="senha"><br /><br />
@@ -66,6 +71,14 @@
             <input class="btn btn-primary btn-lg" type="submit" value="verificar"><br />
             <a class="btn btn-danger btn-lg" href="cadastro.php">Cadastre-se<a><br />
         </form>
+        
+        <?php
+        if (!empty($_SESSION["erro"])) {
+            echo $_SESSION["erro"];
+            unset($_SESSION["erro"]);
+        }
+        ?>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

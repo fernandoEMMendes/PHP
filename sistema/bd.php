@@ -18,9 +18,14 @@ if ($_POST["email"] == $_POST["emailconfirm"] and $_POST["senha"] == $_POST["sen
             $_POST["rg"],
             $_POST["cpf"],
             $_POST["data_nas"],
-            sha1($_POST["sexo"]),
+            $_POST["sexo"],
+            $_POST["email"],
+            sha1($_POST["senha"]),
         )
     );
+
+    echo "Dados gravados corretamente!";
+    echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
 } else {
     echo "usuario e senha são diferentes";
 }
