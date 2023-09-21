@@ -24,10 +24,13 @@ if ($_POST["email"] == $_POST["emailconfirm"] and $_POST["senha"] == $_POST["sen
         )
     );
 
-    echo "Dados gravados corretamente!";
+    session_start();
+    $_SESSION["error"] = '<div class="alert alert-success" role="alert">Logado com sucesso!</div>';
     echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
 } else {
-    echo "usuario e senha são diferentes";
+    session_start();
+    $_SESSION["error"] = '<div class="alert alert-danger" role="alert">Usuário ou senha não encontrados</div>';
+    echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
 }
 
 

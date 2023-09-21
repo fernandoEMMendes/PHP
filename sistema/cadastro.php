@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +24,14 @@
     <div class="container text-center">
 
         <h2>Cadastro de usuários</h2>
+
+        <?php
+        if (!empty($_SESSION["erro"])) {
+            echo $_SESSION["erro"];
+            unset($_SESSION["erro"]);
+        }
+        ?>
+
         <form action="bd.php" method="post">
 
             <div class="row">

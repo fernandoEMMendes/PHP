@@ -7,7 +7,7 @@ if (empty($_POST["user"]) or empty($_POST["senha"])) {
     $_SESSION["erro"] = '<div class="alert alert-danger" role="alert"> Dados obrigatórios não preenchidos </div>';
     echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
 } else {
-    
+
     $pdo = new PDO("mysql:host=localhost;dbname=aulasphp", "root", "");
 
     $sql = $pdo->prepare("SELECT * FROM `usuario` WHERE email=? AND senha=?");
@@ -17,9 +17,10 @@ if (empty($_POST["user"]) or empty($_POST["senha"])) {
     $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     if (!empty($resultado)) {
-        echo "Usuario valido";
+        $_SESSION['usuario'] = $_POST['user'];
+        echo "<meta http-equiv='refresh' content='3; URL=principal.php'/>";
     } else {
-        $_SESSION["erro"] = '<div class="alert alert-danger" role="alert"> Usuario o    u senha não encontrados </div>';
+        $_SESSION["erro"] = '<div class="alert alert-danger" role="alert"> Usuario ou senha não encontrados </div>';
         echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
     }
 }
