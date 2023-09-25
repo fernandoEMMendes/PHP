@@ -1,0 +1,17 @@
+.divCSS {
+
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: black;
+
+    padding: 5;
+    margin: 5;
+}
+
+.textCSS {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
