@@ -16,7 +16,7 @@ session_start()
 
 <body class="bg-light">
     <nav class="navbar bg-black">
-        <a class="navbar-brand" href="http://localhost/MeusProjetos/sistema/">
+        <a class="navbar-brand" href="./index.php">
             <img src="recursos/logo_dark.jpg" style="width: 8rem" alt="SEGA">
         </a>
     </nav>
