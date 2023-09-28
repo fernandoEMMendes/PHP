@@ -31,13 +31,26 @@ if (!isset($_SESSION['usuario'])) {
     <br />
 
     <div class="container text-center">
-        <h2 class="mt-2">Menus de opções</h3>
+        <table class="table table-hover mt-2">
+            <thead>
+                <thead>
+                    <th class="col">Id</th>
+                    <th class="col">Nome</th>
+                    <th class="col">E-mail</th>
+                    <th class="col">Opções</th>
+                </thead>
+            </thead>
+            <tbody>
+                <?php
+                $pdo = new PDO("mysql:host=localhost;dbname=aulasphp", "root", "");
 
-            <br />
+                $sql = $pdo->prepare("SELECT id, nome, email FROM 'usuarios'");
 
-            <a class="btn btn-lg btn-dark mt-2" href="listar.php">Listar</a>
+                $sql->execute(array())
+                    ?>
+            </tbody>
+        </table>
     </div>
-
 
 
 

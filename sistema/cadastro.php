@@ -73,7 +73,7 @@ session_start()
             <br />
 
             <div class="col-md-12">
-                <select required name="sexo" required id="" required>
+                <select required name="sexo" id="" required>
                     <option value="">Selecione um</option>
                     <option value="fem">Feminino</option>
                     <option value="mas">Masculino</option>
