@@ -21,9 +21,9 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
     <nav class="navbar bg-black">
-        <a class="navbar-brand" href="http://localhost/MeusProjetos/sistema/">
+        <a class="navbar-brand" href="http://localhost/MeusProjetos/sistema/principal.php">
             <img src="recursos/logo_dark.jpg" style="width: 8rem" alt="SEGA">
-            <a class="btn btn-lg btn-light mt-2" href="logout.php"><img src="recursos/logout.png"
+            <a class="btn btn-lg btn-light mt-2" href="index.php"><img src="recursos/logout.png"
                     style="width: 2rem; color: light" /></a>
         </a>
     </nav>

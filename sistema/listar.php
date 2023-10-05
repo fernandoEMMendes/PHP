@@ -21,9 +21,9 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
     <nav class="navbar bg-black">
-        <a class="navbar-brand" href="http://localhost/MeusProjetos/sistema/">
+        <a class="navbar-brand" href="http://localhost/MeusProjetos/sistema/principal.php">
             <img src="recursos/logo_dark.jpg" style="width: 8rem" alt="SEGA">
-            <a class="btn btn-lg btn-light mt-2" href="logout.php"><img src="recursos/logout.png"
+            <a class="btn btn-lg btn-light mt-2" href="index.php"><img src="recursos/logout.png"
                     style="width: 2rem; color: light" /></a>
         </a>
     </nav>
@@ -44,10 +44,27 @@ if (!isset($_SESSION['usuario'])) {
                 <?php
                 $pdo = new PDO("mysql:host=localhost;dbname=aulasphp", "root", "");
 
-                $sql = $pdo->prepare("SELECT id, nome, email FROM 'usuarios'");
+                $sql = $pdo->prepare("SELECT id, nome, email FROM `usuario`");
 
-                $sql->execute(array())
-                    ?>
+                $sql->execute(array());
+
+                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+                //echo "<pre>";
+                //print_r($info);
+                //echo "</pre>";
+                
+                foreach ($info as $key => $value) {
+
+                    echo "<tr>";
+                    echo "<th scope='row'>" . $info[$key]['id'] . "</th>";
+                    echo "<td>" . $info[$key]['nome'] . "</td>";
+                    echo "<td>" . $info[$key]['email'] . "</td>";
+                    echo "<td><a class='btn btn-dark btn-lg' href='editar.php'>Edit</a> <a class='btn btn-warning btn-lg' href='#'>Del</a></td>";
+                    echo "</tr>";
+                }
+
+                ?>
             </tbody>
         </table>
     </div>
