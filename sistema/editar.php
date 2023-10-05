@@ -30,6 +30,8 @@ $info = $sql->fetchAll(PDO::FETCH_ASSOC);
     <nav class="navbar bg-black">
         <a class="navbar-brand" href="./principal.php">
             <img src="recursos/logo_dark.jpg" style="width: 8rem" alt="SEGA">
+            <a class="btn btn-lg btn-light mt-2" href="index.php"><img src="recursos/logout.png"
+                    style="width: 2rem; color: light" /></a>
         </a>
     </nav>
 
@@ -56,11 +58,12 @@ $info = $sql->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
                 <div class="col-md-6">
-                    <input class="form-control" type="text" name="sobrenome" id="" placeholder="Sobrenome" required value="<?php
-                    if (!isset($info)) {
-                        echo $info[0]["sobrenome"];
-                    }
-                    ?>">
+                    <input class="form-control" type="text" name="sobrenome" id="" placeholder="Sobrenome" required
+                        value="<?php
+                        if (!isset($info)) {
+                            echo $info[0]["sobrenome"];
+                        }
+                        ?>">
                 </div>
             </div class="row">
 
@@ -89,8 +92,7 @@ $info = $sql->fetchAll(PDO::FETCH_ASSOC);
             <div class="row">
                 <div class="col-md-6">
                     <input class="form-control " type="email" name="emailconfirm" id="" placeholder="Confirmar Email"
-                        required
-                        >
+                        required>
                 </div>
 
                 <div class="col-md-6">
