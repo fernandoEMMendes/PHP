@@ -31,13 +31,43 @@ if (!isset($_SESSION['usuario'])) {
     <br />
 
     <div class="container text-center">
-        <h2 class="mt-2">Menus de opções</h3>
+        <table class="table table-hover mt-2">
+            <thead>
+                <thead>
+                    <th class="col">Id</th>
+                    <th class="col">Nome</th>
+                    <th class="col">E-mail</th>
+                    <th class="col">Opções</th>
+                </thead>
+            </thead>
+            <tbody>
+                <?php
+                $pdo = new PDO("mysql:host=localhost;dbname=aulasphp", "root", "");
 
-            <br />
+                $sql = $pdo->prepare("SELECT id, nome, email FROM `usuario`");
 
-            <a class="btn btn-lg btn-dark mt-2" href="listar.php">Listar</a>
+                $sql->execute(array());
+
+                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+                //echo "<pre>";
+                //print_r($info);
+                //echo "</pre>";
+                
+                foreach ($info as $key => $value) {
+
+                    echo "<tr>";
+                    echo "<th scope='row'>" . $info[$key]['id'] . "</th>";
+                    echo "<td>" . $info[$key]['nome'] . "</td>";
+                    echo "<td>" . $info[$key]['email'] . "</td>";
+                    echo "<td><a class='btn btn-dark btn-lg' href='editar.php'>Edit</a> <a class='btn btn-warning btn-lg' href='#'>Del</a></td>";
+                    echo "</tr>";
+                }
+
+                ?>
+            </tbody>
+        </table>
     </div>
-
 
 
 

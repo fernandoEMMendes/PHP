@@ -1,9 +1,21 @@
 <?php
-session_start()
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    echo "<script>alert('Usuário não logado!'</script>";
+    echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
+}
+//Conexão com BD
+$pdo = new PDO("mysql:host=localhost;dbname=aulasphp", "root", "");
+//
+$sql = $pdo->prepare("SELECT * FROM `usuario` WHERE id=?");
+$sql->execute(array($_POST["id"]));
+$info = $sql->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,14 +28,16 @@ session_start()
 
 <body class="bg-light">
     <nav class="navbar bg-black">
-        <a class="navbar-brand" href="./index.php">
+        <a class="navbar-brand" href="./principal.php">
             <img src="recursos/logo_dark.jpg" style="width: 8rem" alt="SEGA">
+            <a class="btn btn-lg btn-light mt-2" href="index.php"><img src="recursos/logout.png"
+                    style="width: 2rem; color: light" /></a>
         </a>
     </nav>
 
     <div class="container text-center">
 
-        <h2>Cadastro de usuários</h2>
+        <h2>Editar Usuario</h2>
 
         <?php
         if (!empty($_SESSION["erro"])) {
@@ -36,11 +50,20 @@ session_start()
 
             <div class="row">
                 <div class="col-md-6">
-                    <input class="form-control " type="text" name="nome" id="" placeholder="Nome" required>
+                    <input class="form-control " type="text" name="nome" id="" placeholder="Nome" required value="<?php
+                    if (!isset($info)) {
+                        echo $info[0]["nome"];
+                    }
+                    ?>">
                 </div>
 
                 <div class="col-md-6">
-                    <input class="form-control" type="text" name="sobrenome" id="" placeholder="Sobrenome" required>
+                    <input class="form-control" type="text" name="sobrenome" id="" placeholder="Sobrenome" required
+                        value="<?php
+                        if (!isset($info)) {
+                            echo $info[0]["sobrenome"];
+                        }
+                        ?>">
                 </div>
             </div class="row">
 
@@ -48,11 +71,19 @@ session_start()
 
             <div class="row">
                 <div class="col-md-6">
-                    <input class="form-control " type="email" name="email" id="" placeholder="Email" required>
+                    <input class="form-control " type="email" name="email" id="" placeholder="Email" required value="<?php
+                    if (!isset($info)) {
+                        echo $info[0]["email"];
+                    }
+                    ?>">
                 </div>
 
                 <div class="col-md-6">
-                    <input class="form-control" type="password" name="senha" id="" placeholder="Senha" required>
+                    <input class="form-control" type="password" name="senha" id="" placeholder="Senha" required value="<?php
+                    if (!isset($info)) {
+                        echo $info[0]["senha"];
+                    }
+                    ?>">
                 </div>
             </div class="row">
 
