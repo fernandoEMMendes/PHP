@@ -13,11 +13,11 @@ body {
 }
 
 .textCSS:hover {
-    background-color: #808080;
+    background-color: darkgray;
 }
 
 .textCSS:active {
-    margin: 20px;
+    background-color: #808080;
 }
 
 .imgCSS {
