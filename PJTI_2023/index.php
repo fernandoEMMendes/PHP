@@ -17,7 +17,7 @@
 </head>
 
 <body class="bg-dark text-white bodyCSS">
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <a class="navbar-brand"><img src="imgs/hamburger.png" class="w-25" /></a>
     </nav>
 
@@ -27,13 +27,15 @@
 
     <div class="container text-center">
         <form action="login.php" method="post">
-            <input placeholder="insira email" class="text-center" /> <br />
-            <input placeholder="insira senha" class="text-center" /> <br />
+            <label>Email:</label> <br />
+            <input type="text" placeholder="insira email" class="text-center" /> <br /> <br />
+            <label>Senha:</label> <br />
+            <input type="password" placeholder="insira senha" class="text-center" /> <br />
 
             <br />
 
-            <input class="btn btn-primary btn-lg" type="submit" value="verificar">
-            <a class="btn btn-danger btn-lg" href="cadastro.php">Cadastre-se<a>
+            <input class="btn btn-secondary btn-lg" type="submit" value="verificar">
+            <a class="btn btn-secondary btn-lg" href="cadastro.php">Cadastro<a>
         </form>
     </div>
 
