@@ -27,6 +27,9 @@
 
     <div class="container text-center">
         <form action="login.php" method="post">
+
+            <br />
+
             <label>Email:</label> <br />
             <input type="text" placeholder="insira email" class="text-center" /> <br /> <br />
             <label>Senha:</label> <br />
