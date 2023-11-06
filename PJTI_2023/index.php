@@ -22,7 +22,7 @@
     </nav>
 
     <h1 class="text-center">
-        <img src="imgs/gordaoLanches.png" alt="Gordão Lanches!" class="w-25" />
+        <img src="imgs/logo.jpg" alt="Gordão Lanches!" class="w-25" />
     </h1>
 
     <div class="container text-center">
