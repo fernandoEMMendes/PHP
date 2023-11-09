@@ -32,10 +32,4 @@ if ($_POST["email"] == $_POST["emailconfirm"] and $_POST["senha"] == $_POST["sen
     $_SESSION["error"] = '<div class="alert alert-danger" role="alert">Usuário ou senha não encontrados</div>';
     echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
 }
-
-
-
-
-
-
 ?>
