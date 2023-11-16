@@ -1,27 +1,31 @@
 <?php
-if ($_POST["senha"] == $_POST["senhaconfirm"]) {
-    $pdo = new PDO("mysql:host=localhost;dbname=gordaolanches", "root", "");
 
-    $sql = $pdo->prepare("INSERT INTO `user` values (null,?,?,?)");
+session_start();
 
-    $sql->execute(
-        array(
-            $_POST["nome"],
-            $_POST["email"],
-            sha1($_POST["senha"]),
-        )
-    );
-
-    session_start();
-    $_SESSION["error"] =
-        '<div class="alert alert-success" role="alert">Cadastrado com sucesso</div>';
+if (!isset($_SESSION['identificador'])) {
     echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
-} else {
-    session_start();
-    $_SESSION["error"] =
-        '<div class="alert alert-danger" role="alert">Erro</div>';
-    echo "<meta http-equiv='refresh' content='3; URL=cadastro.php'/>";
+    echo "<script>alert('Usuário não logado!')</script>";
 }
+
+$pdo = new PDO("mysql:host=localhost;dbname=gordaolanches", "root", "");
+
+$sql = $pdo->prepare("INSERT INTO `pedidos` values (null,?,?,?,?,?,?,?,?,?)");
+
+$sql->execute(
+    array(
+        $_POST["nomeCliente"],
+        $_POST["tipoEntrega"],
+        $_POST["lanche"],
+        $_POST["bebida"], //pode ser NULL
+        $_POST["acompanhamento"], //pode ser NULL
+        $_POST["cep"],
+        $_POST["bairro"],
+        $_POST["rua"],
+        $_POST["numero"],   
+    )
+);
+
+echo "<meta http-equiv='refresh' content='3; URL=funcionalidades.php'/>";
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +35,7 @@ if ($_POST["senha"] == $_POST["senhaconfirm"]) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrando. . .</title>
+    <title>Criando pedido. . .</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>

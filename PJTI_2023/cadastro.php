@@ -15,9 +15,9 @@ session_start()
 </head>
 
 <body class="bg-dark text-white bodyCSS">
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand" href="./index.php"><img src="imgs/hamburger.png" class="w-25" /></a>
-    </nav>
+    <?php
+    include "components/header.php"
+        ?>
 
     <div class="container text-center">
         <h2>Formulário de cadastro</h2>
@@ -54,12 +54,7 @@ session_start()
         </form>
     </div>
 
-
-
-
-
-
-    <footer class="footer py-3 bg-black fixed-bottom">
+    <footer class="footer py-3 bg-black mt-5">
         <div class="container text-center">
             <h3 class="text-light">Gordão Lanches - 2023</h3>
         </div>
