@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['identificador'])) {
+if (empty($_SESSION['identificador'])) {
     echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
     echo "<script>alert('Usuário não logado!')</script>";
 }

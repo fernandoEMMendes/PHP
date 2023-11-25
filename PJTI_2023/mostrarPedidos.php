@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['identificador'])) {
+if (empty($_SESSION['identificador'])) {
     echo "<script>alert('Usuário não logado!'</script>";
     echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
 }
@@ -41,7 +41,7 @@ if (!isset($_SESSION['identificador'])) {
                 <thead>
                     <th class="col">Id</th>
                     <th class="col">Nome</th>
-                    <th class="col">Presencial?</th>
+                    <th class="col">Delivery?</th>
                     <th class="col">Lanche</th>
                     <th class="col">Bebida</th>
                     <th class="col">acompanhamento</th>
@@ -76,7 +76,10 @@ if (!isset($_SESSION['identificador'])) {
                     echo "<td>" . $info[$key]['bairro'] . "</td>";
                     echo "<td>" . $info[$key]['rua'] . "</td>";
                     echo "<td>" . $info[$key]['numero'] . "</td>";
-                    echo "<td><a class='btn btn-dark btn-lg' href='bdEditar.php'>Edit</a> <a class='btn btn-warning btn-lg' href='bdDeletar.php'>Del</a></td>";
+                    echo "<td>
+                            <a class='btn btn-dark btn-lg' href='editarPedidos.php?id=" . $info[$key]['id'] . "'>Edit</a> 
+                            <a class='btn btn-warning btn-lg' href='bdDeletar.php?id=" . $info[$key]['id'] . "'>Del</a>
+                        </td>";
                     echo "</tr>";
                 }
 

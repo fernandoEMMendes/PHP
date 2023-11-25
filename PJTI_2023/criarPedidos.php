@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['identificador'])) {
+if (empty($_SESSION['identificador'])) {
     echo "<meta http-equiv='refresh' content='3; URL=index.php'/>";
     echo "<script>alert('Usuário não logado!')</script>";
 }
@@ -56,15 +56,14 @@ if (!isset($_SESSION['identificador'])) {
                 <div class="col-md-6 mt-4">
                     <h3>Delivery?</h3>
                     <select name="tipoEntrega" id="" onchange='on_change(this)' required>
-                        <option value="presencial">Não</option>
-                        <option value="entrega">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="Sim">Sim</option>
                     </select>
                 </div>
 
                 <div class="col-md-6 mt-4">
                     <h3>Lanche</h3>
                     <select name="lanche" id="">
-                        <option value="">Nenhum</option>
                         <option value="hamburger">Hamburger</option>
                         <option value="hotdog">Hotdog</option>
                         <option value="misto quente">Misto Quente</option>
@@ -75,9 +74,9 @@ if (!isset($_SESSION['identificador'])) {
                     <h3>Bebida</h3>
                     <select name="bebida" id="">
                         <option value="">Nenhum</option>
-                        <option value="cocacola600ml">Coca-Cola 600ml</option>
-                        <option value="pepsi600ml">Pepsi 600ml</option>
-                        <option value="guarana600ml">Guaraná Antarctica 600ml</option>
+                        <option value="cocacola 600ml">Coca-Cola 600ml</option>
+                        <option value="pepsi 600ml">Pepsi 600ml</option>
+                        <option value="guarana 600ml">Guaraná Antarctica 600ml</option>
                     </select>
                 </div>
 
@@ -95,19 +94,19 @@ if (!isset($_SESSION['identificador'])) {
                     <h1 class="mt-5">Para delivery</h1>
 
                     <div class="col-md mt-4">
-                        <input class="form-control" type="text" name="cep" id="" value="" placeholder="cep" required />
+                        <input class="form-control" type="text" name="cep" id="" value="" placeholder="cep" />
                     </div>
 
                     <div class="col-md mt-4">
-                        <input class="form-control" type="text" name="bairro" id="" value="" placeholder="bairro" required />
+                        <input class="form-control" type="text" name="bairro" id="" value="" placeholder="bairro" />
                     </div>
 
                     <div class="col-md mt-4">
-                        <input class="form-control" type="text" name="rua" id="" value="" placeholder="rua" required />
+                        <input class="form-control" type="text" name="rua" id="" value="" placeholder="rua" />
                     </div>
 
                     <div class="col-md mt-4">
-                        <input class="form-control" type="text" name="numero" id="" value="" placeholder="número da moradia" required />
+                        <input class="form-control" type="text" name="numero" id="" value="" placeholder="número da moradia" />
                     </div>
                 </div>
             </div>
