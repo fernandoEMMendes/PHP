@@ -18,10 +18,10 @@ $sql->execute(
         $_POST["lanche"],
         $_POST["bebida"], //pode ser NULL
         $_POST["acompanhamento"], //pode ser NULL
-        $_POST["cep"],
-        $_POST["bairro"],
-        $_POST["rua"],
-        $_POST["numero"],   
+        $_POST["cep"], //pode ser NULL
+        $_POST["bairro"], //pode ser NULL
+        $_POST["rua"], //pode ser NULL
+        $_POST["numero"], //pode ser NULL
     )
 );
 

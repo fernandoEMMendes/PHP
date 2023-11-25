@@ -14,21 +14,31 @@ if (!isset($_SESSION['identificador'])) {
     <style>
         <?php
         include "css/body.css"
-            ?>
+        ?>
     </style>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gordão | Criar Pedidos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body class="bg-dark text-white bodyCSS">
+
+    <script>
+        function on_change(el) {
+            if (el.options[el.selectedIndex].value == 'entrega') {
+                document.getElementById('text').style.display = '', document.getElementById('text').style.textAlign = 'center';
+            } else {
+                document.getElementById('text').style.display = 'none';
+            }
+        }
+    </script>
+
     <?php
     include "components/header2.php"
-        ?>
+    ?>
 
     <h1 class="text-center">
         <img src="imgs/logo.png" alt="Gordão Lanches!" class="w-25" />
@@ -40,16 +50,14 @@ if (!isset($_SESSION['identificador'])) {
         <form action="bdCriarPedidos.php" method="post">
             <div class="row">
                 <div class="col-md-12 mt-4">
-                    <input class="form-control" type="text" name="nomeCliente" id="" value=""
-                        placeholder="Nome de chamada" required />
+                    <input class="form-control" type="text" name="nomeCliente" id="" value="" placeholder="Nome de chamada" required />
                 </div>
 
                 <div class="col-md-6 mt-4">
-                    <h3>entrega</h3>
-                    <select name="tipoEntrega" id="" required>
-                        <option value="">Selecione um</option>
-                        <option value="presencial">Comer no estabelecimento</option>
-                        <option value="entrega">Entrega por delivery</option>
+                    <h3>Delivery?</h3>
+                    <select name="tipoEntrega" id="" onchange='on_change(this)' required>
+                        <option value="presencial">Não</option>
+                        <option value="entrega">Sim</option>
                     </select>
                 </div>
 
@@ -83,28 +91,26 @@ if (!isset($_SESSION['identificador'])) {
                     </select>
                 </div>
 
+                <div id="text" style="display:none;">
+                    <h1 class="mt-5">Para delivery</h1>
 
-                <h1 class="mt-5">Para delivery</h1>
+                    <div class="col-md mt-4">
+                        <input class="form-control" type="text" name="cep" id="" value="" placeholder="cep" required />
+                    </div>
 
-                <div class="col-md-6 mt-4">
-                    <input class="form-control" type="text" name="cep" id="" value="" placeholder="cep" required />
-                </div>
+                    <div class="col-md mt-4">
+                        <input class="form-control" type="text" name="bairro" id="" value="" placeholder="bairro" required />
+                    </div>
 
-                <div class="col-md-6 mt-4">
-                    <input class="form-control" type="text" name="bairro" id="" value="" placeholder="bairro"
-                        required />
-                </div>
+                    <div class="col-md mt-4">
+                        <input class="form-control" type="text" name="rua" id="" value="" placeholder="rua" required />
+                    </div>
 
-                <div class="col-md-6 mt-4">
-                    <input class="form-control" type="text" name="rua" id="" value="" placeholder="rua" required />
-                </div>
-
-                <div class="col-md-6 mt-4">
-                    <input class="form-control" type="text" name="numero" id="" value="" placeholder="número da moradia"
-                        required />
+                    <div class="col-md mt-4">
+                        <input class="form-control" type="text" name="numero" id="" value="" placeholder="número da moradia" required />
+                    </div>
                 </div>
             </div>
-
 
             <div>
                 <input class="btn btn-primary btn-lg mt-5" type="submit" value="criar" />
@@ -118,7 +124,5 @@ if (!isset($_SESSION['identificador'])) {
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
