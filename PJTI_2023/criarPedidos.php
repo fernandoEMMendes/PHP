@@ -28,7 +28,7 @@ if (empty($_SESSION['identificador'])) {
 
     <script>
         function on_change(el) {
-            if (el.options[el.selectedIndex].value == 'entrega') {
+            if (el.options[el.selectedIndex].value == 'Sim') {
                 document.getElementById('text').style.display = '', document.getElementById('text').style.textAlign = 'center';
             } else {
                 document.getElementById('text').style.display = 'none';
